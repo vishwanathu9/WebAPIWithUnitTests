@@ -13,10 +13,10 @@ namespace BusinessServices
 {
    public class ProductServices : IProductServices
     {
-        private readonly UnitOfWork _unitOfWork;
-        public ProductServices()
+        private readonly unitOfWork _unitOfWork;
+        public ProductServices( unitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork();
+            _unitOfWork = unitOfWork;
         }
         public int CreateProduct(ProductEntity productEntity)
         {

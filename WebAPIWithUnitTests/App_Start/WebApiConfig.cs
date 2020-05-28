@@ -1,7 +1,10 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
+using WebAPIWithUnitTests.ActionFilter;
 
 namespace WebAPIWithUnitTests
 {
@@ -11,8 +14,11 @@ namespace WebAPIWithUnitTests
         {
             // Web API configuration and services
 
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.Filters.Add(new GlobalExceptionAttribute());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

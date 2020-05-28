@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataModel.UnitOfWork
 {
-   public  class UnitOfWork : IDisposable
+   public  class unitOfWork : IDisposable
     {
 
         private WebApiDbEntities _context = null;
@@ -18,7 +18,7 @@ namespace DataModel.UnitOfWork
         private GenericRepository<Product> _productRepository;
         private GenericRepository<Token> _tokenRepository;
 
-        public UnitOfWork()
+        public unitOfWork()
         {
             _context = new WebApiDbEntities();
         }

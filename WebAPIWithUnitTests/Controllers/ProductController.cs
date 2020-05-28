@@ -14,9 +14,9 @@ namespace WebAPIWithUnitTests.Controllers
     {
         private readonly IProductServices _productService;
 
-        public ProductController()
+        public ProductController(IProductServices productServices)
         {
-            _productService = new ProductServices();
+            _productService = productServices;
         }
         // GET: api/Product
         [HttpGet]
